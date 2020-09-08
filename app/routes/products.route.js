@@ -1,4 +1,5 @@
 const { authJwt } = require("../middleware");
+const { verifyFields } = require("../middleware");
 const controller = require("../controllers/products.controllers");
 
 module.exports = function (app) {
@@ -14,12 +15,12 @@ module.exports = function (app) {
   app.get("/api/products/:itemId", controller.getProductDetails);
   app.post(
     "/api/products/new",
-    [authJwt.verifyToken, authJwt.isAdmin],
+    [authJwt.verifyToken, authJwt.isAdmin, verifyFields.checkProductFields],
     controller.createProduct
   );
   app.put(
     "/api/products/:itemId",
-    [authJwt.verifyToken, authJwt.isAdmin],
+    [authJwt.verifyToken, authJwt.isAdmin, verifyFields.checkProductFields],
     controller.updateProduct
   );
   app.delete(
