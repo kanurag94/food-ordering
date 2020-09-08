@@ -28,11 +28,17 @@ exports.signup = (req, res) => {
           user.setRoles(roles).then(() => {
             if (req.body.roles === "staff") {
               Employee.create({
-                username: user.username,
                 isBusy: false,
               })
                 .then((employee) => {
-                  res.send({ message: "Staff Created Successfully" });
+                  employee
+                    .setUser(user)
+                    .then(() => {
+                      res.send({ message: "Staff Created Successfully" });
+                    })
+                    .catch((err) => {
+                      res.send({ message: "Staff Creation Failed" });
+                    });
                 })
                 .catch((err) => {
                   res.status(500).send({ message: err.message });

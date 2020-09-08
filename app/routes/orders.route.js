@@ -1,5 +1,5 @@
 const controller = require("../controllers/orders.controllers");
-const { authJwt } = require("../middleware");
+const { authJwt, verifyFields } = require("../middleware");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -18,7 +18,11 @@ module.exports = function (app) {
 
   app.post("/api/orders", [authJwt.verifyToken], controller.getOrders);
 
-  app.post("/api/orders/new", [authJwt.verifyToken], controller.createOrder);
+  app.post(
+    "/api/orders/new",
+    [authJwt.verifyToken, verifyFields.checkOrderFields],
+    controller.createOrder
+  );
 
   app.post(
     "/api/orders/:orderId",

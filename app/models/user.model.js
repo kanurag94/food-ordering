@@ -19,10 +19,6 @@ exports.User = (sequelize, Sequelize) => {
 
 exports.Employee = (sequelize, Sequelize) => {
   const Employee = sequelize.define("employees", {
-    username: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
     isBusy: {
       type: Sequelize.BOOLEAN,
     },

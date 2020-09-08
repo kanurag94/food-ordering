@@ -6,6 +6,7 @@ const Op = db.Sequelize.Op;
 
 exports.createProduct = (req, res) => {
   Products.create({
+    name: req.body.name,
     imageUrl: req.body.imageUrl,
     price: req.body.price,
     quantity: req.body.quantity,
@@ -71,6 +72,7 @@ exports.updateProduct = (req, res) => {
   })
     .then((product) => {
       product.update({
+        name: req.body.name,
         imageUrl: req.body.imageUrl,
         price: req.body.price,
         quantity: req.body.quantity,

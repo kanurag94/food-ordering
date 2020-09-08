@@ -1,5 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
   const Products = sequelize.define("products", {
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
     imageUrl: {
       type: Sequelize.STRING,
     },
