@@ -26,57 +26,33 @@ Available in `app/routes/auth.route.js`
 - Sign Up route: `/api/auth/signup` type = `POST`
 
 Request format
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 username: STRING,
 password: STRING (>7 length),
 email: STRING,
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: public
 
 - Sign Up Custom route: `/api/auth/signupcustom` type = `POST`
 
 Request format
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 username: STRING,
 password: STRING (>7 length),
 email: STRING,
 roles: STRING ("staff", "admin", "user"),
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: admin
 
 - Sign in route: `/api/auth/signin` type = `POST`
 
 Request format
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 username: STRING,
 password: STRING (>7 length),
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: registered users
 
@@ -85,11 +61,7 @@ Accessible by: registered users
 - Create route: `/api/orders/new` type = `POST`
 
 Request format
-<<<<<<< HEAD
 
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 itemId: id of item purchased,
 userId: userID making request,
@@ -99,27 +71,15 @@ staffId: auto assigned,
 eta: calculateEta(req),
 isComplete: false,
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: registered users
 
 - Get order details route: `/api/orders/:orderId` type = `GET`
 
 Request format
-<<<<<<< HEAD
 {
 id: req.params.orderID
 }
-=======
-```
-{
-id: req.params.orderID
-}
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: users
 
@@ -133,17 +93,9 @@ Accessible by: admin (everyone's order), user and staff
 
 Fulfils a order (marks isComplete = True)
 
-<<<<<<< HEAD
 {
 id: req.params.orderId
 }
-=======
-```
-{
-id: req.params.orderId
-}
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: admin (everyone's order), and staff
 
@@ -153,37 +105,21 @@ Accessible by: admin (everyone's order), and staff
 
 Request format
 
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 name: req.body.name,
 imageUrl: req.body.imageUrl,
 price: req.body.price,
 quantity: req.body.quantity,
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by admin
 
 - Get product details route: `/api/products/:itemId` type = `GET`
 
 Request format
-<<<<<<< HEAD
 {
 id: req.params.itemId
 }
-=======
-```
-{
-id: req.params.itemId
-}
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: public
 
@@ -194,7 +130,6 @@ Lists all products
 Accessible by: public
 
 - Delete a product: `/api/products/:itemId` type = `DELETE`
-<<<<<<< HEAD
 
 {
 id: req.params.itemId
@@ -205,20 +140,6 @@ Deletes a product
 {
 id: req.params.orderId
 }
-=======
-```
-{
-id: req.params.itemId
-}
-```
-
-Deletes a product
-```
-{
-id: req.params.orderId
-}
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by: admin
 
@@ -227,11 +148,7 @@ Accessible by: admin
 Updates a product
 
 Request format
-<<<<<<< HEAD
 
-=======
-```
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 {
 itemId: req.body.itemID
 name: req.body.name,
@@ -239,10 +156,5 @@ imageUrl: req.body.imageUrl,
 price: req.body.price,
 quantity: req.body.quantity,
 }
-<<<<<<< HEAD
-=======
-```
-
->>>>>>> d769e84f0332659c5dbab5427563272198c4f3e4
 
 Accessible by admin
